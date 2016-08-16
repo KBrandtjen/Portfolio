@@ -1,48 +1,46 @@
 header {
   width: 100%;
-  height: 150px;
-  background-color: #BFD7B5;
+  height: 100px;
+  background: #BFD7B5;
 }
 
-header h1 {
-  top: 40px;
-  width: 40%;
-  display: inline;
-  margin-top: 60px;
-  font-size: 25px;
+.inner {
+  width: 960px;
+  margin: 0 auto;
 }
 
-nav {
-  width: 50%;
-  margin-right: 50px;
-  float: right;
+.inner h1 {
+  float: left;
+  margin-right: 100px;
+}
+
+header ul {
+  margin-top: 0px;
+}
+
+header ul li {
+  display: inline-block;
+  margin-right: 75px;
   margin-top: 5px;
-}
-
-nav ul {
-  display: inline;
-  /*font-size: 15px;*/
-}
-
-nav li {
-  display: inline;
-  font-size: 25px;
 }
 
 .about {
   text-align: center;
   height: 400px;
-  background-image: url("file://img/fishbackground.jpeg");
+  border-top: solid 2px black;
 }
+
 
 .recentProjects {
   text-align: center;
   height: 400px;
+  border-top: solid 2px black;
 }
 
 .social {
   text-align: center;
   height: 400px;
+  border-top: solid 2px black;
 }
 
 @media only screen and (min-width: 640px) {

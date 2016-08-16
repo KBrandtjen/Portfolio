@@ -32,9 +32,15 @@ nav li {
 .about {
   text-align: center;
   height: 400px;
+  background-image: url("file://img/fishbackground.jpeg");
 }
 
 .recentProjects {
+  text-align: center;
+  height: 400px;
+}
+
+.social {
   text-align: center;
   height: 400px;
 }

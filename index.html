@@ -20,25 +20,29 @@
       </ul>
     </div>
   </header>
+  <main>
   <section class="about">
     <article>
       <h2> About Me </h2>
       <p> This is where I talk about me and all the cool stuff I do. Like typing and typing and more typing. Cause I'm just typing away and I know I can use lorem ipsum but I forgot how to do it and instead of looking it up I just decided to waste 3.5 minutes carelessly typing away at nothing. So anyway About Me. </p>
   </article>
   </section>
-  <section class="recentProjects">
-    <article>
-      <h2> Recent Projects </h2>
-      <p> </p>
-  </article>
-</section>
-<section class="social">
-  <article>
-    <h2> Social </h2>
-  </article>
-</section>
+  <section id="articles">
+    <article class="template" data-category="placeholder-category">
+        <img src="">
+        <h1>Title</h1>
+        <h2>Author</h2>
+          published <time pubdate datetime="2000-01-01">Publish Time</time>
+        <section class="project-description"></section>
+    </article>
+  </section>
+</main>
 <footer>
 </footer>
+
   <script src="vendors/jquery-3.1.0.min.js"></script>
+  <script src="js/fullArticles.js"></script>
+  <script src="js/app.js"></script>
+
 </body>
 </html>

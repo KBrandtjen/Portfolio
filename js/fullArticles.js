@@ -2,7 +2,7 @@
 
 var ourLocalData = [
   {
-    img: '../img/plants.jpeg',
+    img: 'img/plants.jpeg',
     title: 'Plants',
     author: 'Keith Brandtjen',
     publishedOn: '2016-08-15',

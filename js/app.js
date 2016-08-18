@@ -12,8 +12,8 @@ function Project (opts) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('articles.template').clone();
-  $newProject.find('img').attr(this.img);
+  var $newProject = $('article.template').clone();
+  $newProject.find('img').attr('src', this.img);
   $newProject.find('h1').text(this.title);
   $newProject.find('h2').text(this.author);
   $newProject.find('.project-description').html(this.description);
@@ -21,7 +21,7 @@ Project.prototype.toHtml = function() {
   $newProject.find('time[pubdate]').attr('title', this.publishedOn);
   $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000 ) + ' days ago');
 
-  $('article.template').removeClass('template');
+  $newProject.removeClass();
   return $newProject;
 };
 

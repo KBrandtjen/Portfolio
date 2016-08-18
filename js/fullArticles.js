@@ -10,7 +10,7 @@ var ourLocalData = [
     category: 'Coding'
   },
   {
-    img:'',
+    img: 'img/fishbackground.jpeg',
     title: 'Fishing',
     author: 'Keith Brandtjen',
     publishedOn: '2016-07-11',

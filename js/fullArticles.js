@@ -2,7 +2,7 @@
 
 var ourLocalData = [
   {
-    img: '../img/plants.jpeg',
+    img: 'img/plants.jpeg',
     title: 'Plants',
     author: 'Keith Brandtjen',
     publishedOn: '2016-08-15',
@@ -10,7 +10,7 @@ var ourLocalData = [
     category: 'Coding'
   },
   {
-    img:'',
+    img: 'img/fishbackground.jpeg',
     title: 'Fishing',
     author: 'Keith Brandtjen',
     publishedOn: '2016-07-11',

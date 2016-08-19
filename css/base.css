@@ -1,54 +1,80 @@
-header {
-  width: 100%;
-  height: 100px;
-  background: #BFD7B5;
+body {
+  background-color: #FEDC97;
+}
+
+.site-header {
+  height: 75px;
+  background-color: #6B8F71;
 }
 
 .inner {
-  width: 960px;
-  margin: 0 auto;
+  line-height: 2px;
+  margin: none;
+  width: 60%;
+  position: relative;
+
 }
 
 .inner h1 {
-  float: left;
-  margin-right: 100px;
-}
-
-header ul {
+  padding-top: 25px;
   margin-top: 0px;
+  margin-left: 5%;
 }
 
-header ul li {
+.inner h2 {
+  font-size: 12px;
+  margin-left: 17%;
+}
+
+.icon-menu {
+  font-size: 40px;
+  position: absolute;
+  right: 65px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.main-nav ul {
+  display: none;
+}
+
+.main-nav ul li {
   display: inline-block;
-  margin-right: 75px;
-  margin-top: 80px;
 }
 
-.about {
+
+#projects {
   text-align: center;
-  height: 400px;
-  border-top: solid 2px black;
+  margin-top: 10px;
 }
 
-
-.recentProjects {
-  text-align: center;
-  height: 400px;
-  border-top: solid 2px black;
+article {
+  margin-bottom: 25px;
 }
 
-.social {
-  text-align: center;
-  height: 400px;
-  border-top: solid 2px black;
+article h1 {
+  line-height: 1px;
 }
 
-@media only screen and (min-width: 640px) {
-  nav ul {
-    font-size: 35px;
-  }
+article h2 {
+  font-size: 12px;
+  margin-bottom: 30px;
 }
 
 img {
-  height: 300px;
+  height: 200px;
+  max-width: 100%;
+}
+
+a, a:link, a:active {
+  text-decoration: none;
+  color: #777;
+}
+
+a:hover, a:focus {
+  color: #29506D;
+}
+
+a:visited {
+  color: #AAA;
 }

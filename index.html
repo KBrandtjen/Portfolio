@@ -9,6 +9,17 @@
   <link rel="stylesheet" href="css/modules.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
+  <script id="projects-template" type="text/x-handlebars-template">
+    <article class="clearfix" data-titlename="{{title}}" data-category="{{category}}">
+      <header>
+        <img src="{{img}}">
+        <h1 class="titleClass">{{title}}</h1>
+        <h2>{{author}}</h2>
+        <section class="project-description">{{description}}</section>
+        published <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
+      </header>
+    </article>
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -39,8 +50,8 @@
     <div>
       <ul id="filters">
         <li>
-          <select id="author-filter">
-            <option value="">-- Filter By Author --</option>
+          <select id="title-filter">
+            <option value="">-- Filter By Title --</option>
           </select>
         </li>
         <li>
@@ -50,13 +61,13 @@
         </li>
       </ul>
     </div>
-    <article class="template" data-category="category">
+    <!-- <article class="template" data-category="category">
         <img src="">
         <h1>Title</h1>
         <h2 class="authorClass">Author</h2>
-        <section class="project-description"></section>
+        <section class="project-description">{{description}}</section>
           published <time pubdate datetime="2000-01-01">Publish Time</time>
-    </article>
+    </article> -->
   </section>
   <section id="about" class="tab-content">
     <h1> Welcome to my blog </h1>
@@ -76,6 +87,7 @@
 </footer>
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
   <script src="js/fullArticles.js"></script>
   <script src="js/app.js"></script>
   <script src="js/articleView.js"></script>

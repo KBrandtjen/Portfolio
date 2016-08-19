@@ -12,21 +12,27 @@ function Project (opts) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.find('img').attr('src', this.img);
-  $newProject.find('h1').text(this.title);
-  $newProject.find('h2').text(this.author);
-  $newProject.find('.project-description').html(this.description);
-  $newProject.attr('data-category', this.category);
-  $newProject.find('time[pubdate]').attr('title', this.publishedOn);
-  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000 ) + ' days ago');
+  // var $newProject = $('article.template').clone();
+  // $newProject.find('img').attr('src', this.img);
+  // $newProject.find('h1').text(this.title);
+  // $newProject.find('h2').text(this.author);
+  // $newProject.find('.project-description').html(this.description);
+  // $newProject.attr('data-category', this.category);
+  // $newProject.find('time[pubdate]').attr('title', this.publishedOn);
+  // $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000 ) + ' days ago');
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000 );
+  this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
-  $newProject.removeClass();
-  return $newProject;
+  var source = $('#projects-template').html();
+  var templateRender = Handlebars.compile(source);
+  return templateRender(this);
+
+  // $newProject.removeClass();
+  // return $newProject;
 };
 
-ourLocalData.sort(function(firstElement, secondElement) {
-  return (new Date(secondElement.publishedOn)) - (new Date(firstElement.publishedOn));
+ourLocalData.sort(function(a,b) {
+  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
 ourLocalData.forEach(function(theCurrentProjectObject) {

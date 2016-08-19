@@ -4,10 +4,10 @@ var articleView = {};
 
 articleView.populateFilters = function() {
   $('article').not('.template').each(function() {
-    var authorName, category, optionTag;
-    authorName = $(this).find('.authorClass').text();
-    optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
-    $('#author-filter').append(optionTag);
+    var titleName, category, optionTag;
+    titleName = $(this).find('.titleClass').text();
+    optionTag = '<option value="' + titleName + '">' + titleName + '</option>';
+    $('#title-filter').append(optionTag);
     category = $(this).attr('data-category');
     optionTag = '<option value="' + category + '">' + category + '</option>';
     if ($('#category-filter option[value="' + category + '"]').length === 0) {
@@ -16,11 +16,11 @@ articleView.populateFilters = function() {
   });
 };
 
-articleView.handleAuthorFilter = function() {
-  $('#author-filter').on('change', function() {
+articleView.handleTitleFilter = function() {
+  $('#title-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $('article[data-authorname ="' + $(this).val() + '" ]').fadeIn();
+      $('article[data-titlename ="' + $(this).val() + '" ]').fadeIn();
     } else {
       $('article').show();
       $('article.template').hide();
@@ -53,6 +53,6 @@ articleView.handleMainNav = function () {
 
 
 articleView.populateFilters();
-articleView.handleAuthorFilter();
+articleView.handleTitleFilter();
 articleView.handleCategoryFilter();
 articleView.handleMainNav();

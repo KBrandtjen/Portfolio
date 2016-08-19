@@ -26,8 +26,8 @@
       </div>
       <div class="menu">
         <ul>
-          <li> About Me </li>
-          <li> Recent Projects </li>
+          <li class="tab" data-content="projects"><a href="#"> Projects </a></li>
+          <li class="tab" data-content="about"><a href="#"> About Me </a></li>
           <li><a href="https://www.linkedin.com/in/keith-brandtjen-25543b76?trk=nav_responsive_tab_profile" target="_blank" class="icon-linkedin"></a></li>
           <li><a href="https://github.com/KBrandtjen" class="icon-github"></a></li>
         </ul>
@@ -35,14 +35,41 @@
     </nav>
   </header>
   <main>
-  <section id="projects">
-    <article class="template" data-category="placeholder-category">
+  <section id="projects" class="tab-content">
+    <div>
+      <ul id="filters">
+        <li>
+          <select id="author-filter">
+            <option value="">-- Filter By Author --</option>
+          </select>
+        </li>
+        <li>
+          <select id="category-filter">
+            <option value="">-- Filter by Categories --</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+    <article class="template" data-category="category">
         <img src="">
         <h1>Title</h1>
-        <h2>Author</h2>
+        <h2 class="authorClass">Author</h2>
         <section class="project-description"></section>
           published <time pubdate datetime="2000-01-01">Publish Time</time>
     </article>
+  </section>
+  <section id="about" class="tab-content">
+    <h1> Welcome to my blog </h1>
+      <p> My name is Keith Brandtjen. I am a new developer, trying to build my skills and learn as much as I can. Check out my work, let me know what you think. If you want to collaborate, contact me. </p>
+    <h2> Some of my interests include </h2>
+        <ul>
+          <li> Design </li>
+          <li> Coding </li>
+          <li> Music </li>
+          <li> Fly-fishing </li>
+          <li> Snowboarding </li>
+          <li> Art </li>
+        </ul>
   </section>
 </main>
 <footer>
@@ -51,6 +78,6 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="js/fullArticles.js"></script>
   <script src="js/app.js"></script>
-
+  <script src="js/articleView.js"></script>
 </body>
 </html>

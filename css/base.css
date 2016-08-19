@@ -35,13 +35,25 @@ body {
 }
 
 .main-nav ul {
-  display: none;
+  /*display: none;*/
 }
 
 .main-nav ul li {
   display: inline-block;
 }
 
+/*#projects div {
+  display: inline-block;*/
+}
+
+#filters {
+  display: inline;
+  width: 40px;
+}
+
+/*#filters li {
+
+}*/
 
 #projects {
   text-align: center;

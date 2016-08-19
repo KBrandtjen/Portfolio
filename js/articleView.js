@@ -45,7 +45,7 @@ articleView.handleMainNav = function () {
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
   });
-  $('main-nav .tab:first').click();
+  $('.main-nav .tab:first').click();
 };
 
 
@@ -54,4 +54,5 @@ articleView.handleMainNav = function () {
 
 articleView.populateFilters();
 articleView.handleAuthorFilter();
-articleView.handleAuthorFilter();
+articleView.handleCategoryFilter();
+articleView.handleMainNav();

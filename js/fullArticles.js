@@ -17,7 +17,14 @@ var ourLocalData = [
     description: 'This project involved capturing fish in their native habitat',
     category: 'Photography'
   },
-
+  {
+    img: 'img/supplies.jpg',
+    title: 'Essentials',
+    author: 'Keith Brandtjen',
+    publishedOn: '2016-08-19',
+    description: 'Going on a 2 week trip you have to pack the essentials. Here are a few things I could not live without.',
+    category: 'Adventure'
+  }
 
 
 

@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
   <script id="projects-template" type="text/x-handlebars-template">
-    <article class="clearfix" data-titlename="{{title}}" data-category="{{category}}">
+    <!-- <article class="clearfix" data-title="{{title}}" data-category="{{category}}"> -->
+    <article class="clearfix">
       <header>
         <img src="{{img}}">
         <h1 class="titleClass">{{title}}</h1>
@@ -20,6 +21,12 @@
       </header>
     </article>
   </script>
+  <!-- <script id="title-filter-template" type="text/x-handlebars-template">
+    <option value="{{title}}">{{title}}</option>
+  </script>
+  <script id="category-filter-template" type="text/x-handlebars-template">
+    <option value="{{category}}">{{category}}</option>
+  </script> -->
 </head>
 <body>
   <header class="site-header">
@@ -28,13 +35,13 @@
       <h2> ~ Web Developer ~ </h2>
     </section>
     <nav class="main-nav">
-      <div class="icon-menu" id="icon-menu">
-        <div></div>
+      <!-- <div class="icon-menu" id="icon-menu"> -->
+        <!-- <div></div>
         <span></span>
         <span></span>
         <span></span>
-        <span></span>
-      </div>
+        <span></span> -->
+      <!-- </div> -->
       <div class="menu">
         <ul>
           <li class="tab" data-content="projects"><a href="#"> Projects </a></li>
@@ -88,7 +95,7 @@
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-  <script src="js/fullArticles.js"></script>
+  <!-- <script src="js/fullArticles.js"></script> -->
   <script src="js/app.js"></script>
   <script src="js/articleView.js"></script>
 </body>

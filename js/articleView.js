@@ -48,7 +48,9 @@ articleView.handleMainNav = function () {
   $('.main-nav .tab:first').click();
 };
 
-
+// articleView.renderIndexPage = function() {
+//   Project.allProjects
+// }
 
 
 

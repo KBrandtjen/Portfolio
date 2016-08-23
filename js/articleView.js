@@ -15,7 +15,7 @@ var articleView = {};
 //     }
 //   });
 // };
-
+//
 // articleView.handleTitleFilter = function() {
 //   $('#title-filter').on('change', function() {
 //     if ($(this).val()) {
@@ -53,12 +53,12 @@ articleView.handleMainNav = function () {
 articleView.renderIndexPage = function() {
   Project.allProjects.forEach(function(a) {
     $('#projects').append(a.toHtml('#projects-template'));
-    // if($('#category-filter option:contains("' + a.category + '")').length === 0) {
-    //   $('#category-filter').append(a.toHtml('#category-filter-template'));
-    // };
-    // if($('#title-filter option:contains("' + a.title + '")').length === 0) {
-    //   $('#title-filter').append(a.toHtml('#title-filter-template'));
-    // };
+    if($('#category-filter option:contains("' + a.category + '")').length === 0) {
+      $('#category-filter').append(a.toHtml('#category-filter-template'));
+    };
+    if($('#title-filter option:contains("' + a.title + '")').length === 0) {
+      $('#title-filter').append(a.toHtml('#title-filter-template'));
+    };
   });
   // articleView.populateFilters();
   // articleView.handleTitleFilter();

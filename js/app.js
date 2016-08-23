@@ -1,5 +1,3 @@
-'use strict';
-
 function Project (opts) {
   for (keys in opts) {
     this[keys] = opts[keys];

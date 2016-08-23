@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
   <script id="projects-template" type="text/x-handlebars-template">
-    <article class="clearfix" data-titlename="{{title}}" data-category="{{category}}">
+    <!-- <article class="clearfix" data-title="{{title}}" data-category="{{category}}"> -->
+    <article class="clearfix">
       <header>
         <img src="{{img}}">
         <h1 class="titleClass">{{title}}</h1>
@@ -20,6 +21,12 @@
       </header>
     </article>
   </script>
+  <!-- <script id="title-filter-template" type="text/x-handlebars-template">
+    <option value="{{title}}">{{title}}</option>
+  </script>
+  <script id="category-filter-template" type="text/x-handlebars-template">
+    <option value="{{category}}">{{category}}</option>
+  </script> -->
 </head>
 <body>
   <header class="site-header">
@@ -28,13 +35,13 @@
       <h2> ~ Web Developer ~ </h2>
     </section>
     <nav class="main-nav">
-      <div class="icon-menu" id="icon-menu">
-        <div></div>
+      <!-- <div class="icon-menu" id="icon-menu"> -->
+        <!-- <div></div>
         <span></span>
         <span></span>
         <span></span>
-        <span></span>
-      </div>
+        <span></span> -->
+      <!-- </div> -->
       <div class="menu">
         <ul>
           <li class="tab" data-content="projects"><a href="#"> Projects </a></li>

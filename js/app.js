@@ -1,3 +1,5 @@
+(function(module) {
+
 function Project (opts) {
   for (keys in opts) {
     this[keys] = opts[keys];
@@ -15,25 +17,69 @@ Project.prototype.toHtml = function() {
 };
 
 Project.loadAll = function(ourLocalData) {
-  ourLocalData.sort(function(a,b) {
+  Project.allProjects = ourLocalData.sort(function(a,b) {
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-  }).forEach(function(ele) {
-    Project.allProjects.push(new Project(ele));
+  }).map(function(ele) {
+    // Project.allProjects.push(new Project(ele));
+    return new Project(ele);
   });
 };
 
-Project.fetchAll = function() {
-  if (localStorage.fullProjects) {
-    var retreivedData = JSON.parse(localStorage.fullProjects);
-    Project.loadAll(retreivedData);
-    articleView.renderIndexPage();
-  }
-  else {
-    $.getJSON('js/fullProjects.json', function (data) {
-      Project.loadAll(data);
-      console.log('hi');
-      localStorage.fullProjects = JSON.stringify(data);
-      articleView.renderIndexPage();
+// Project.fetchAll = function() {
+//   if (localStorage.fullProjects) {
+//     var retreivedData = JSON.parse(localStorage.fullProjects);
+//     Project.loadAll(retreivedData);
+//     articleView.renderIndexPage();
+//     articleView.renderFooter();
+//   }
+//   else {
+//     $.getJSON('js/fullProjects.json', function (data) {
+//       Project.loadAll(data);
+//       console.log('hi');
+//       localStorage.fullProjects = JSON.stringify(data);
+//       articleView.renderIndexPage();
+//       articleView.renderFooter();
+//     });
+//   }
+// };
+
+Project.fetchAll = function(nextFunction) {
+    if (localStorage.fullProjects) {
+      $.ajax({
+        type: 'HEAD',
+        url: 'js/fullProjects.json',
+        success: function(data, message, xhr) {
+          var eTag = xhr.getResponseHeader('eTag');
+          if (!localStorage.eTag || eTag !== localStorage.eTag) {
+            Project.getAll(nextFunction);
+          } else {
+            Project.loadAll(JSON.parse(localStorage.fullProjects));
+            nextFunction();
+          }
+        }
+      });
+    } else {
+      Project.getAll(nextFunction);
+    }
+  };
+
+  Project.getAll = function(nextFunction) {
+    $.getJSON('js/fullProjects.json', function(responseData, message, xhr) {
+      localStorage.eTag = xhr.getResponseHeader('eTag');
+      Project.loadAll(responseData);
+      localStorage.fullProjects = JSON.stringify(responseData);
+      nextFunction();
     });
-  }
+  };
+
+
+Project.numWordsAll = function() {
+  return Project.allProjects.map(function(currentProject) {
+    return currentProject.description.match(/\w+/g).length;
+  }).reduce(function(prev, cur) {
+    return prev + cur;
+  });
 };
+
+  module.Project = Project;
+})(window);

@@ -27,6 +27,7 @@
   <script id="category-filter-template" type="text/x-handlebars-template">
     <option value="{{category}}">{{category}}</option>
   </script> -->
+  <script id="stats-template" type="text/x-handlebars-template"></script>
 </head>
 <body>
   <header class="site-header">
@@ -91,6 +92,9 @@
   </section>
 </main>
 <footer>
+  <section id="description-total">
+    <dt> Total Words in Project Descriptions:</dt> <dd class="words"></dd>
+  </section>
 </footer>
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -98,5 +102,6 @@
   <!-- <script src="js/fullArticles.js"></script> -->
   <script src="js/app.js"></script>
   <script src="js/articleView.js"></script>
+  <script src="js/statsView.js"></script>
 </body>
 </html>

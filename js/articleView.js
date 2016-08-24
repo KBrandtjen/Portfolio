@@ -1,6 +1,7 @@
 'use strict';
 
-var articleView = {};
+(function(module) {
+  var articleView = {};
 
 // articleView.populateFilters = function() {
 //   $('article').not('.template').each(function() {
@@ -66,4 +67,9 @@ articleView.renderIndexPage = function() {
   articleView.handleMainNav();
 };
 
-Project.fetchAll();
+
+
+Project.fetchAll(articleView.renderIndexPage);
+
+module.articleView = articleView;
+})(window);

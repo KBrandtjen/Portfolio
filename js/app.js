@@ -1,29 +1,28 @@
 (function(module) {
 
-function Project (opts) {
-  for (keys in opts) {
-    this[keys] = opts[keys];
+  function Project (opts) {
+    for (keys in opts) {
+      this[keys] = opts[keys];
+    }
   }
-}
 
-Project.allProjects = [];
+  Project.allProjects = [];
 
-Project.prototype.toHtml = function() {
-  var source = $('#projects-template').html();
-  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000 );
-  this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
-  var templateRender = Handlebars.compile(source);
-  return templateRender(this);
-};
+  Project.prototype.toHtml = function() {
+    var source = $('#projects-template').html();
+    this.daysAgo = parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000 );
+    this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+    var templateRender = Handlebars.compile(source);
+    return templateRender(this);
+  };
 
-Project.loadAll = function(ourLocalData) {
-  Project.allProjects = ourLocalData.sort(function(a,b) {
-    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-  }).map(function(ele) {
-    // Project.allProjects.push(new Project(ele));
-    return new Project(ele);
-  });
-};
+  Project.loadAll = function(ourLocalData) {
+    Project.allProjects = ourLocalData.sort(function(a,b) {
+      return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+    }).map(function(ele) {
+      return new Project(ele);
+    });
+  };
 
 // Project.fetchAll = function() {
 //   if (localStorage.fullProjects) {
@@ -43,7 +42,7 @@ Project.loadAll = function(ourLocalData) {
 //   }
 // };
 
-Project.fetchAll = function(nextFunction) {
+  Project.fetchAll = function(nextFunction) {
     if (localStorage.fullProjects) {
       $.ajax({
         type: 'HEAD',
@@ -73,13 +72,13 @@ Project.fetchAll = function(nextFunction) {
   };
 
 
-Project.numWordsAll = function() {
-  return Project.allProjects.map(function(currentProject) {
-    return currentProject.description.match(/\w+/g).length;
-  }).reduce(function(prev, cur) {
-    return prev + cur;
-  });
-};
+  Project.numWordsAll = function() {
+    return Project.allProjects.map(function(currentProject) {
+      return currentProject.description.match(/\w+/g).length;
+    }).reduce(function(prev, cur) {
+      return prev + cur;
+    });
+  };
 
   module.Project = Project;
 })(window);

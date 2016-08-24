@@ -43,33 +43,33 @@
 //   });
 // };
 
-articleView.handleMainNav = function () {
-  $('.main-nav').on('click', '.tab', function () {
-    $('.tab-content').hide();
-    $('#' + $(this).data('content')).fadeIn();
-  });
-  $('.main-nav .tab:first').click();
-};
+  articleView.handleMainNav = function () {
+    $('.main-nav').on('click', '.tab', function () {
+      $('.tab-content').hide();
+      $('#' + $(this).data('content')).fadeIn();
+    });
+    $('.main-nav .tab:first').click();
+  };
 
-articleView.renderIndexPage = function() {
-  Project.allProjects.forEach(function(a) {
-    $('#projects').append(a.toHtml('#projects-template'));
-    if($('#category-filter option:contains("' + a.category + '")').length === 0) {
-      $('#category-filter').append(a.toHtml('#category-filter-template'));
-    };
-    if($('#title-filter option:contains("' + a.title + '")').length === 0) {
-      $('#title-filter').append(a.toHtml('#title-filter-template'));
-    };
-  });
+  articleView.renderIndexPage = function() {
+    Project.allProjects.forEach(function(a) {
+      $('#projects').append(a.toHtml('#projects-template'));
+      if($('#category-filter option:contains("' + a.category + '")').length === 0) {
+        $('#category-filter').append(a.toHtml('#category-filter-template'));
+      };
+      if($('#title-filter option:contains("' + a.title + '")').length === 0) {
+        $('#title-filter').append(a.toHtml('#title-filter-template'));
+      };
+    });
   // articleView.populateFilters();
   // articleView.handleTitleFilter();
   // articleView.handleCategoryFilter();
-  articleView.handleMainNav();
-};
+    articleView.handleMainNav();
+  };
 
 
 
-Project.fetchAll(articleView.renderIndexPage);
+  Project.fetchAll(articleView.renderIndexPage);
 
-module.articleView = articleView;
+  module.articleView = articleView;
 })(window);

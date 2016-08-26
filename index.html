@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- TODO: Wihtin the html page I need to get rid of commented code or get that code to work. Most of the commented code wants deals with the category and title filters. I had this working previously but since adding new things they are not working. I either need to get them working or remove them all together. They are making my code hard to read.  -->
   <meta charset="UTF-8">
   <title> Keith - Portfolio </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <script id="projects-template" type="text/x-handlebars-template">
     <!-- <article class="clearfix" data-title="{{title}}" data-category="{{category}}"> -->
+    <!-- Creating this comment in order to make a pull request for week 9 assignment.  -->
     <article class="clearfix">
       <header>
         <img src="{{img}}">
@@ -43,6 +45,7 @@
         <span></span>
         <span></span> -->
       <!-- </div> -->
+      <!-- The section above is my attempts at creating a hamburger menu. I need to get that working. I tried implementing this the first couple days but didn't get it working and then the functionality took precedent over the look and interactivity.  -->
       <div class="menu">
         <ul>
           <li class="tab" data-content="projects"><a href="#"> Projects </a></li>
@@ -94,6 +97,7 @@
 <footer>
   <section id="description-total">
     <dt> Total Words in Project Descriptions:</dt> <dd class="words"></dd>
+    <!-- Right now I have a number counter that is counting the number of words in the project descriptions. This was for functionality purposes but I would like to incorporate some stats that are meaningful to my site. Since my portfolio is a record of all the things I have worked on I think that I would like to track something more relateable. I was thinking about adding a category to my page that was either hours spent on each project or skills used. My stats could then be total # of skills used or total # of hrs spent on all projects. -->
   </section>
 </footer>
 

@@ -15,6 +15,7 @@
     var templateRender = Handlebars.compile(source);
     return templateRender(this);
   };
+  // Right now my page is not displaying the data the way I want it to. It orders the projects by date but I want the date to be displayed as " Published 5 days ago". Right now it appear as 08/12/16. So I want to change the formatting of the date. 
 
   Project.loadAll = function(ourLocalData) {
     Project.allProjects = ourLocalData.sort(function(a,b) {
@@ -23,7 +24,7 @@
       return new Project(ele);
     });
   };
-
+// Get rid of this commented code. I have replaced the fetchAll function so I no longer need this old version.
 // Project.fetchAll = function() {
 //   if (localStorage.fullProjects) {
 //     var retreivedData = JSON.parse(localStorage.fullProjects);

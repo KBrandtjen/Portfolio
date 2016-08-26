@@ -3,6 +3,8 @@
 (function(module) {
   var articleView = {};
 
+// TODO I need to clean up this code and get rid of the commented code or figure out how to use it. Again, this code relates to the category filters. I would like to get them working. Even though at this point they seem a little useless. As I add more projects to my portfolio I think they will become much more useful.
+
 // articleView.populateFilters = function() {
 //   $('article').not('.template').each(function() {
 //     var titleName, category, optionTag;
@@ -61,6 +63,8 @@
         $('#title-filter').append(a.toHtml('#title-filter-template'));
       };
     });
+    // TODO I wanted to add this to the JSON page but couldn't comment. I want to change the information in my projects section. I want them to actually reflect the projects I have created so far in my coding. RIght now I have photos and some filler information but I would like it to actually reflect the projects I have worked on.
+
   // articleView.populateFilters();
   // articleView.handleTitleFilter();
   // articleView.handleCategoryFilter();

@@ -1,0 +1,19 @@
+{
+  "name": "keith-portfolio",
+  "version": "1.0.0",
+  "description": "\"keith b 301 portfolio project\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KBrandtjen/Portfolio.git"
+  },
+  "author": "keith brandtjen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KBrandtjen/Portfolio/issues"
+  },
+  "homepage": "https://github.com/KBrandtjen/Portfolio#readme"
+}

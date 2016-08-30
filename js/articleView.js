@@ -45,13 +45,13 @@
 //   });
 // };
 
-  articleView.handleMainNav = function () {
-    $('.main-nav').on('click', '.tab', function () {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-    $('.main-nav .tab:first').click();
-  };
+  // articleView.handleMainNav = function () {
+  //   $('.main-nav').on('click', '.tab', function () {
+  //     $('.tab-content').hide();
+  //     $('#' + $(this).data('content')).fadeIn();
+  //   });
+  //   $('.main-nav .tab:first').click();
+  // };
 
   articleView.renderIndexPage = function() {
     Project.allProjects.forEach(function(a) {
@@ -68,7 +68,7 @@
   // articleView.populateFilters();
   // articleView.handleTitleFilter();
   // articleView.handleCategoryFilter();
-    articleView.handleMainNav();
+    // articleView.handleMainNav();
   };
 
 

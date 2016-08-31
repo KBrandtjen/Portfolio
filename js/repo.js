@@ -6,7 +6,7 @@
   reposObj.requestRepos = function(callback) {
 // Create an ajax function that will request the repos from github
     $.ajax({
-      url: 'https://api.github.com/users/codefellows-seattle-301d10/repos' +
+      url: 'https://api.github.com/users/KBrandtjen/repos' +
             '?per_page=5' +
             '&sort=updated',
       type: 'GET',

@@ -5,18 +5,14 @@
 
   reposObj.requestRepos = function(callback) {
 // Create an ajax function that will request the repos from github
-    $.ajax({
-      url: 'https://api.github.com/users/KBrandtjen/repos' +
+    $.when(
+      $.get('github/users/KBrandtjen/repos' +
             '?per_page=5' +
-            '&sort=updated',
-      type: 'GET',
-      headers: {'Authorization': 'token ' + githubToken},
-      success: function(data) {
-        console.log(data);
-        reposObj.allRepos = data;
-        callback();
-      }
-    });
+            '&sort=updated')
+            .done(function(data) {
+              reposObj.allRepos = data;
+            })
+    ).done(callback);
   };
 
   reposObj.withTheAttribute = function(myAttr) {
